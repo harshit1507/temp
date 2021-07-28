@@ -52,7 +52,7 @@ public class Player_Movement : MonoBehaviour
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
             if(touch.phase == TouchPhase.Moved)
             {
-                if(touchPos.x < 0 && touchPos.y < 0)
+                /*if(touchPos.x < 0 && touchPos.y < 0)
                 {
                     touchPos.x += 1f;
                     touchPos.y += 1f;
@@ -77,7 +77,7 @@ public class Player_Movement : MonoBehaviour
                 {
                     touchPos.x += 1f;
                     touchPos.y -= 1f;
-                }
+                }*/
                 Rb.MovePosition(new Vector2(touchPos.x, touchPos.y));
 
                 Debug.Log(touchPos.x + ", " + touchPos.y);
