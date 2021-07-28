@@ -100,7 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.02
   padding: 1
-  laserPrefab: {fileID: 0}
+  laserPrefab: {fileID: 8986464610943343561, guid: 2ce2061ac6db2174bb69082e98899e7c,
+    type: 3}
+  projectileSpeed: 10
+  projectileFiringPeriod: 5
 --- !u!50 &7775467981401295380
 Rigidbody2D:
   serializedVersion: 4
