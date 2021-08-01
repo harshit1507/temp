@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 2036468959357417433}
   - component: {fileID: 276273856817550551}
   - component: {fileID: 8678904977332854960}
-  - component: {fileID: 3042968598160592377}
-  m_Layer: 0
+  - component: {fileID: -7427813779752982106}
+  - component: {fileID: 5650411588741016167}
+  - component: {fileID: -3504197006579502170}
+  - component: {fileID: 4708394305966878114}
+  m_Layer: 6
   m_Name: Bernard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,8 +114,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!58 &3042968598160592377
-CircleCollider2D:
+  deathVFX: {fileID: 8052877140662454857, guid: 28ad7da4d7c65614bae746f98ef543df,
+    type: 3}
+  durationOfExplosion: 1
+  deathSFX: {fileID: 8300000, guid: f4b5c344dd7415044981d0e44c04fe61, type: 3}
+  deathSFXVolume: 0.75
+--- !u!114 &-7427813779752982106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036468959357417432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e190da744b4cc5b4c941e3eef1d2063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 3
+  projectile: {fileID: 8986464610943343561, guid: 6490d1484bfba1b41b5e60d47389b917,
+    type: 3}
+  projectileSpeed: 10
+  shootSound: {fileID: 8300000, guid: 79797107859068f4e95a8fdddd875c1b, type: 3}
+  shootSoundVolume: 0.4
+--- !u!60 &5650411588741016167
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,9 +149,74 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0030180812, y: 0.009054184}
-  serializedVersion: 2
-  m_Radius: 0.35824203
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.97, y: 0.84}
+    newSize: {x: 1.024, y: 1.024}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.451188, y: 0.26999998}
+      - {x: 0.48499998, y: 0.42}
+      - {x: 0.29190597, y: 0.4115471}
+      - {x: 0.18303849, y: 0.34}
+      - {x: 0.105, y: 0.27041462}
+      - {x: -0.009641025, y: 0.29154697}
+      - {x: -0.10751581, y: 0.2728604}
+      - {x: -0.145, y: 0.29618806}
+      - {x: -0.27613246, y: 0.38464108}
+      - {x: -0.293453, y: 0.40732053}
+      - {x: -0.48499998, y: 0.42}
+      - {x: -0.4554145, y: 0.30422643}
+      - {x: -0.39541462, y: 0.065773554}
+      - {x: -0.2880941, y: -0.2930941}
+      - {x: -0.275, y: -0.34}
+      - {x: -0.19722402, y: -0.33096707}
+      - {x: -0.145, y: -0.42}
+      - {x: -0.010566294, y: -0.41999996}
+      - {x: 0.13499999, y: -0.42}
+      - {x: 0.17654699, y: -0.33196157}
+      - {x: 0.285, y: -0.34}
+      - {x: 0.32613245, y: -0.19011119}
+--- !u!50 &-3504197006579502170
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036468959357417432}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &4708394305966878114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036468959357417432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f1ee0d092094ab2794fb291e0d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 200
