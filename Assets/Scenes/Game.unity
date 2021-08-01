@@ -305,6 +305,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aec7bc49677468a4a93d1738661f20ef, type: 2}
   - {fileID: 11400000, guid: e9d9a4533ef02d349844e0293a4cb247, type: 2}
   startingWave: 0
+  looping: 1
 --- !u!4 &764220874
 Transform:
   m_ObjectHideFlags: 0
@@ -637,11 +638,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Path (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226084486266231079, guid: 924759bfe5eb2e645b5b798dcd0a9333,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.67
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 924759bfe5eb2e645b5b798dcd0a9333, type: 3}
