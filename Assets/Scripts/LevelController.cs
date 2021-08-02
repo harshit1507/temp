@@ -10,11 +10,16 @@ public class LevelController : MonoBehaviour
     public void LoadStartMenu()
     {
         LoadScene(0);
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadGame()
     {
-        FindObjectOfType<GameSession>().ResetGame();
+        GameSession gameSession = FindObjectOfType<GameSession>();
+        if(gameSession)
+        {
+            gameSession.ResetScore();
+        }
         LoadScene(1);
     }
 

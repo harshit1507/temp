@@ -23,15 +23,33 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.1f;
-    
 
+    //GameSession gameSession;
     float xMin, xMax, yMin, yMax;   //KeyboardInput
+
+    private void Awake()
+    {
+        SetUpSingleton();
+    }
+
+    private void SetUpSingleton()
+    {
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         SetUpMoveBoundaries();  //KeyboardInput
         Rb = GetComponent<Rigidbody2D>();
+        //gameSession = FindObjectOfType<GameSession>();
         StartCoroutine(FireContinously());
     }   
 
@@ -64,6 +82,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         FindObjectOfType<LevelController>().LoadGameOver();
+        //PlayerPrefs.SetInt("HighScore", gameSession.GetScore());
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSFXVolume);
     }

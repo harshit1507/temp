@@ -35,6 +35,12 @@ public class GameSession : MonoBehaviour
 
     public void ResetGame()
     {
+        FindObjectOfType<ScoreDisplay>().ResetHighScore();
+        Destroy(gameObject);
+    }
+
+    public void ResetScore()
+    {
         Destroy(gameObject);
     }
 }
